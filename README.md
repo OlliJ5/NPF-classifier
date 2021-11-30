@@ -13,4 +13,5 @@
 
 - [ ] Accuracy estimations
 - [ ] Cross-validation https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation
+- [ ] p-estimator for class2
 
