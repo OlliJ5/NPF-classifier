@@ -8,6 +8,6 @@
 ## Week 2
 
 * Solve logistic regression warning: lbfgs failed to converge
-	* Normalize data?
+	* Normalize data - Done. Warning removed.
 	* Feature selection?
 
