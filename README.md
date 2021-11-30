@@ -12,5 +12,5 @@
 	- [ ] Feature selection?
 
 - [ ] Accuracy estimations
-- [ ] Cross-validation
+- [ ] Cross-validation https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation
 
