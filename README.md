@@ -1,6 +1,6 @@
 ## Initial Plan
 
-* Build some simple binary classification without anything special to get a baseline. Logistic regression and Naive Bayes
+- [x] Build some simple binary classification without anything special to get a baseline. Logistic regression and Naive Bayes
 * Accuracy estimation for these baseline models. Cross-validation n shit
 * better data exploration, feature selection and other preprocessing, better model selection
 * Binary to Multi-label
@@ -8,6 +8,8 @@
 ## Week 2
 
 * Solve logistic regression warning: lbfgs failed to converge
-	* Normalize data - Done. Warning removed.
-	* Feature selection?
+	* Normalize data? [ ]
+	* Feature selection? [ ]
+    * Accuracy estimations [ ]
+    * Cross-validation [ ] 
 
