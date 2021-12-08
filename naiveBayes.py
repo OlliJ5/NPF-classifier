@@ -19,40 +19,29 @@ df = df.drop(['id', 'date', 'class4'], axis=1)
 y = df['class2']
 X = df.drop(['class2'], axis=1)
 
-#train test split
-#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
-
 
 #Create model and predict
 gnb = GaussianNB()
-scores = cross_val_score(gnb, X, y, cv=3)
-
-#fitting with basic train/test split
-#y_pred = gnb.fit(X_train, y_train).predict(X_test)
-
+#scores = cross_val_score(gnb, X, y, cv=3)
 
 #performance measures, accuracy estimations, stats etc.
-print("Scores using cross validation", scores)
+#print("Scores using cross validation", scores)
 
 #Classification accuracy and standard deviation
-print("%0.2f accuracy with a standard deviation of %0.2f" % (scores.mean(), scores.std()))
+#print("%0.2f accuracy with a standard deviation of %0.2f" % (scores.mean(), scores.std()))
 
 #Confusion matrix
-kf = KFold(n_splits=5)
-# for train_index, test_index in kf.split(X):
-
-#    X_train, X_test = X[train_index], X[test_index]
-#    y_train, y_test = y[train_index], y[test_index]
-
-#    gnb.fit(X_train, y_train)
-#    print(confusion_matrix(y_test, gnb.predict(X_test)))
+kf = KFold(n_splits=3)
 
 for train_index, test_index in kf.split(X):
-     print("TRAIN:", train_index, "TEST:", test_index)
+     #print("TRAIN:", train_index, "TEST:", test_index)
      X_train, X_test = X.loc[train_index], X.loc[test_index]
      y_train, y_test = y[train_index], y[test_index]
 
      gnb.fit(X_train, y_train)
-     print(confusion_matrix(y_test, gnb.predict(X_test)))
+     y_pred = gnb.predict(X_test)
+     print(confusion_matrix(y_test, y_pred))
+
+     print("Number of mislabeled points out of a total %d points : %d" % (X_test.shape[0], (y_test != y_pred).sum()))
 
 #print("Number of mislabeled points out of a total %d points : %d" % (X_test.shape[0], (y_test != y_pred).sum()))
